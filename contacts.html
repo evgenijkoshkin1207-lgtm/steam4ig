@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — BeamNG.drive Казахстан | Поддержка и Telegram</title>
+    <meta name="description" content="Свяжитесь с нами по вопросам покупки BeamNG.drive. Email, телефон, Telegram канал. Поддержка 24/7 для игроков из Казахстана.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://store.steampowered.com/favicon.ico">
+    <style>
+        /* Полный CSS из основного файла */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0c1117;
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(26, 95, 180, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(220, 20, 60, 0.15) 0%, transparent 30%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            color: #1a5fb4;
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #1a5fb4, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: #b8c7e0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .nav-link i {
+            color: #1a5fb4;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(26, 95, 180, 0.2);
+            color: #ffffff;
+        }
+        
+        .kz-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0, 102, 51, 0.2), rgba(0, 102, 51, 0.1));
+            border: 1px solid rgba(0, 102, 51, 0.4);
+            color: #00cc66;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        /* БЛОК КОНТАКТОВ */
+        .contacts {
+            background: rgba(20, 25, 40, 0.7);
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contacts h1 {
+            color: #33d6ff;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contacts h1 i {
+            color: #1a5fb4;
+        }
+        
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(26, 95, 180, 0.05);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(26, 95, 180, 0.15);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: #1a5fb4;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .contact-text h3 {
+            color: #ffffff;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-text a, .contact-text span {
+            color: #b8c7e0;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            line-height: 1.5;
+        }
+        
+        .contact-text a:hover {
+            color: #1a5fb4;
+        }
+        
+        .about-us {
+            background: rgba(20, 25, 40, 0.7);
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .about-us h2 {
+            color: #33d6ff;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .about-us h2 i {
+            color: #1a5fb4;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #b8c7e0;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(26, 95, 180, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #1a5fb4;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a5fb4;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #8ba3ca;
+            font-size: 0.95rem;
+        }
+        
+        .telegram-block {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(0, 102, 153, 0.1));
+            border: 1px solid #0088cc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .telegram-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .telegram-icon {
+            font-size: 3.5rem;
+            color: #0088cc;
+        }
+        
+        .telegram-text h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .telegram-text p {
+            color: #b8c7e0;
+            font-size: 1.1rem;
+        }
+        
+        .telegram-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .telegram-button:hover {
+            background: transparent;
+            border-color: #0088cc;
+            color: #0088cc;
+            transform: scale(1.05);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1a5fb4;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .back-link i {
+            margin-right: 8px;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 300px;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #6d7c9a;
+            font-size: 0.9rem;
+        }
+    </style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeamNG.drive Steam KZ",
+        "description": "Официальный дистрибьютор BeamNG.drive в Казахстане. Быстрая доставка, поддержка 24/7.",
+        "url": "https://php-goida.vercel.app",
+        "logo": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Казахстан",
+            "email": "support@beamng-kz.kz"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@beamng-kz.kz",
+            "contactType": "customer support",
+            "availableLanguage": ["Russian", "English"]
+        },
+        "sameAs": [
+            "https://store.steampowered.com/app/284160/BeamNGdrive/",
+            "https://t.me/+FLBllMGrB7RhMzky"
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - ТОВАР (ИГРА) с обновленной ценой -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "BeamNG.drive",
+        "description": "BeamNG.drive — реалистичный симулятор автомобилей с мягкой физикой в реальном времени. Уникальная система повреждений транспортных средств.",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg",
+        "sku": "STEAM-284160",
+        "brand": {
+            "@type": "Brand",
+            "name": "BeamNG GmbH"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://store.steampowered.com/app/284160/BeamNGdrive/",
+            "priceCurrency": "KZT",
+            "price": "4999",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Steam"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "107489",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "releaseDate": "2015-05-29",
+        "genre": ["Симулятор", "Автомобили", "Физика", "Песочница"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Windows 10/11"
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - ХЛЕБНЫЕ КРОШКИ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://php-goida.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Игры",
+                "item": "https://php-goida.vercel.app/#game"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "BeamNG.drive",
+                "item": "https://php-goida.vercel.app/#game"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Где купить BeamNG.drive в Казахстане?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Официальная версия BeamNG.drive доступна в Steam для Казахстана по цене 4 999 тенге. Покупка осуществляется через платформу Steam."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие системные требования у BeamNG.drive?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Минимальные требования: Windows 10 64-bit, процессор Intel Core i5 8400 или AMD Ryzen 5 1600, 16 GB ОЗУ, видеокарта с 6GB VRAM, 60 GB на диске. Рекомендованные: Windows 10 64-bit, процессор Intel Core i7 9700 или AMD Ryzen 7 3700X, 32 GB ОЗУ, видеокарта с 8GB VRAM, 60 GB на диске."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Поддерживает ли BeamNG.drive русский язык?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, BeamNG.drive полностью поддерживает русский язык интерфейса и субтитры."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как происходит доставка игры?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Доставка мгновенная. После оплаты через Steam игра автоматически появится в вашей библиотеке. Мы не отправляем ключи, покупка совершается напрямую через платформу Steam."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Есть ли Telegram канал с новостями?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, подписывайтесь на наш Telegram канал, чтобы первыми узнавать о скидках, обновлениях и новостях BeamNG.drive: https://t.me/+FLBllMGrB7RhMzky"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-car-crash logo-icon"></i>
+                <div class="logo-text">BeamNG.drive</div>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link"><i class="fas fa-gamepad"></i> Игра</a>
+                <a href="prices.html" class="nav-link"><i class="fas fa-coins"></i> Цены</a>
+                <a href="delivery.html" class="nav-link"><i class="fas fa-truck"></i> Где купить</a>
+                <a href="contacts.html" class="nav-link active"><i class="fas fa-phone-alt"></i> Контакты</a>
+                <a href="news.html" class="nav-link"><i class="fas fa-newspaper"></i> Акции и новости</a>
+                <a href="https://t.me/+FLBllMGrB7RhMzky" target="_blank" class="nav-link" style="color: #0088cc;"><i class="fab fa-telegram"></i> Telegram</a>
+            </nav>
+            <div class="kz-badge">
+                <i class="fas fa-flag"></i>
+                <span>Казахстан • 4 999 ₸</span>
+            </div>
+        </header>
+        
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+        
+        <!-- Telegram блок -->
+        <div class="telegram-block">
+            <div class="telegram-info">
+                <div class="telegram-icon"><i class="fab fa-telegram-plane"></i></div>
+                <div class="telegram-text">
+                    <h3>Наш Telegram канал</h3>
+                    <p>🔥 Акции, новости, обновления BeamNG.drive и общение с единомышленниками</p>
+                </div>
+            </div>
+            <a href="https://t.me/+FLBllMGrB7RhMzky" target="_blank" class="telegram-button">
+                <i class="fab fa-telegram"></i> Подписаться
+            </a>
+        </div>
+        
+        <section class="contacts">
+            <h1><i class="fas fa-address-card"></i> Контакты</h1>
+            
+            <div class="contacts-grid">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <a href="mailto:support@beamng-kz.kz">support@beamng-kz.kz</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <h3>Телефон (WhatsApp)</h3>
+                        <a href="tel:+77001234567">+7 700 123 4567</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-telegram"></i></div>
+                    <div class="contact-text">
+                        <h3>Telegram (чат)</h3>
+                        <a href="https://t.me/beamng_kz_support" target="_blank">@beamng_kz_support</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-text">
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/77001234567" target="_blank">+7 700 123 4567</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-vk"></i></div>
+                    <div class="contact-text">
+                        <h3>VKontakte</h3>
+                        <a href="https://vk.com/beamng_kz" target="_blank">@beamng_kz</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-discord"></i></div>
+                    <div class="contact-text">
+                        <h3>Discord</h3>
+                        <a href="https://discord.gg/beamng" target="_blank">BeamNG Community</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h3>Адрес</h3>
+                        <span>Казахстан, Алматы<br>БЦ "Almaty Towers", офис 404<br>(только для корреспонденции)</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-text">
+                        <h3>Режим работы</h3>
+                        <span>Поддержка: 24/7 онлайн<br>Офис: Пн-Пт 10:00-19:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about-us">
+            <h2><i class="fas fa-building"></i> О нас</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Мы — команда энтузиастов из Казахстана, помогаем геймерам приобретать лицензионные игры в Steam по локальным ценам с 2021 года. Наша цель — сделать покупку игр простой, безопасной и выгодной.</p>
+                    <p>Сотрудничаем напрямую с платформой Steam, гарантируем официальное приобретение лицензии. Все игры привязываются к вашему аккаунту и не требуют дополнительных активаций.</p>
+                    <p>Мы всегда на связи и готовы помочь с выбором, ответить на вопросы о системных требованиях или процессе покупки. Подписывайтесь на наш Telegram канал, чтобы быть в курсе всех акций и новостей!</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">лет на рынке</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">довольных клиентов</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">поддержка</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">официальные ключи</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 • BeamNG.drive является зарегистрированной торговой маркой BeamNG GmbH</p>
+            <p>Все покупки осуществляются через платформу Steam. Цена указана в казахстанских тенге (₸).</p>
+            <p style="margin-top: 10px;">
+                <a href="mailto:support@beamng-kz.kz" style="color: #1a5fb4;">support@beamng-kz.kz</a> | 
+                <a href="https://t.me/+FLBllMGrB7RhMzky" target="_blank" style="color: #0088cc;">Telegram канал</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

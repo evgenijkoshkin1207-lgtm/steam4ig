@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акции и новости BeamNG.drive — скидки, обновления, события</title>
+    <meta name="description" content="Все акции и новости BeamNG.drive. Текущие скидки в Steam, выход обновлений, конкурсы модов. Подпишись на Telegram.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://store.steampowered.com/favicon.ico">
+    <style>
+        /* Полный CSS из основного файла */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #0c1117;
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(26, 95, 180, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(220, 20, 60, 0.15) 0%, transparent 30%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            color: #1a5fb4;
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #1a5fb4, #dc143c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: #b8c7e0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .nav-link i {
+            color: #1a5fb4;
+            font-size: 0.9rem;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(26, 95, 180, 0.2);
+            color: #ffffff;
+        }
+        
+        .kz-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0, 102, 51, 0.2), rgba(0, 102, 51, 0.1));
+            border: 1px solid rgba(0, 102, 51, 0.4);
+            color: #00cc66;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        /* БЛОК НОВОСТЕЙ */
+        .news-sales {
+            background: rgba(20, 25, 40, 0.7);
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .news-sales h1 {
+            color: #33d6ff;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .news-sales h1 i {
+            color: #1a5fb4;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: rgba(26, 95, 180, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid #1a5fb4;
+        }
+        
+        .news-card.sale {
+            border-bottom-color: #dc143c;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 25px;
+        }
+        
+        .news-date {
+            color: #8ba3ca;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .news-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .news-description {
+            color: #b8c7e0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .news-badge {
+            display: inline-block;
+            background: #dc143c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .news-badge.sale {
+            background: #00cc66;
+        }
+        
+        .telegram-block {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.2), rgba(0, 102, 153, 0.1));
+            border: 1px solid #0088cc;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .telegram-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .telegram-icon {
+            font-size: 3rem;
+            color: #0088cc;
+        }
+        
+        .telegram-text h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .telegram-text p {
+            color: #b8c7e0;
+        }
+        
+        .telegram-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0088cc;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .telegram-button:hover {
+            background: transparent;
+            border-color: #0088cc;
+            color: #0088cc;
+            transform: scale(1.05);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1a5fb4;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .back-link i {
+            margin-right: 8px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+        
+        .page-link {
+            background: rgba(26, 95, 180, 0.2);
+            color: #b8c7e0;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .page-link:hover,
+        .page-link.active {
+            background: #1a5fb4;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #6d7c9a;
+            font-size: 0.9rem;
+        }
+    </style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BeamNG.drive Steam KZ",
+        "description": "Официальный дистрибьютор BeamNG.drive в Казахстане. Быстрая доставка, поддержка 24/7.",
+        "url": "https://php-goida.vercel.app",
+        "logo": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Казахстан",
+            "email": "support@beamng-kz.kz"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@beamng-kz.kz",
+            "contactType": "customer support",
+            "availableLanguage": ["Russian", "English"]
+        },
+        "sameAs": [
+            "https://store.steampowered.com/app/284160/BeamNGdrive/",
+            "https://t.me/+FLBllMGrB7RhMzky"
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - ТОВАР (ИГРА) с обновленной ценой -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "BeamNG.drive",
+        "description": "BeamNG.drive — реалистичный симулятор автомобилей с мягкой физикой в реальном времени. Уникальная система повреждений транспортных средств.",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg",
+        "sku": "STEAM-284160",
+        "brand": {
+            "@type": "Brand",
+            "name": "BeamNG GmbH"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://store.steampowered.com/app/284160/BeamNGdrive/",
+            "priceCurrency": "KZT",
+            "price": "4999",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Steam"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "107489",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "releaseDate": "2015-05-29",
+        "genre": ["Симулятор", "Автомобили", "Физика", "Песочница"],
+        "applicationCategory": "Game",
+        "operatingSystem": "Windows 10/11"
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - ХЛЕБНЫЕ КРОШКИ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Главная",
+                "item": "https://php-goida.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Игры",
+                "item": "https://php-goida.vercel.app/#game"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "BeamNG.drive",
+                "item": "https://php-goida.vercel.app/#game"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- JSON-LD МИКРОРАЗМЕТКА - FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Где купить BeamNG.drive в Казахстане?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Официальная версия BeamNG.drive доступна в Steam для Казахстана по цене 4 999 тенге. Покупка осуществляется через платформу Steam."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие системные требования у BeamNG.drive?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Минимальные требования: Windows 10 64-bit, процессор Intel Core i5 8400 или AMD Ryzen 5 1600, 16 GB ОЗУ, видеокарта с 6GB VRAM, 60 GB на диске. Рекомендованные: Windows 10 64-bit, процессор Intel Core i7 9700 или AMD Ryzen 7 3700X, 32 GB ОЗУ, видеокарта с 8GB VRAM, 60 GB на диске."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Поддерживает ли BeamNG.drive русский язык?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, BeamNG.drive полностью поддерживает русский язык интерфейса и субтитры."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Как происходит доставка игры?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Доставка мгновенная. После оплаты через Steam игра автоматически появится в вашей библиотеке. Мы не отправляем ключи, покупка совершается напрямую через платформу Steam."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Есть ли Telegram канал с новостями?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да, подписывайтесь на наш Telegram канал, чтобы первыми узнавать о скидках, обновлениях и новостях BeamNG.drive: https://t.me/+FLBllMGrB7RhMzky"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-car-crash logo-icon"></i>
+                <div class="logo-text">BeamNG.drive</div>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link"><i class="fas fa-gamepad"></i> Игра</a>
+                <a href="prices.html" class="nav-link"><i class="fas fa-coins"></i> Цены</a>
+                <a href="delivery.html" class="nav-link"><i class="fas fa-truck"></i> Где купить</a>
+                <a href="contacts.html" class="nav-link"><i class="fas fa-phone-alt"></i> Контакты</a>
+                <a href="news.html" class="nav-link active"><i class="fas fa-newspaper"></i> Акции и новости</a>
+                <a href="https://t.me/+FLBllMGrB7RhMzky" target="_blank" class="nav-link" style="color: #0088cc;"><i class="fab fa-telegram"></i> Telegram</a>
+            </nav>
+            <div class="kz-badge">
+                <i class="fas fa-flag"></i>
+                <span>Казахстан • 4 999 ₸</span>
+            </div>
+        </header>
+        
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+           
+        <section class="news-sales">
+            <h1><i class="fas fa-tags"></i> Акции и новости BeamNG.drive</h1>
+            
+            <div class="news-grid">
+                <!-- Акция (выделено) -->
+                <div class="news-card sale">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/header.jpg" alt="Скидка на BeamNG.drive" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">20 февраля 2026</span>
+                        <h3 class="news-title">⚡ Горячая скидка в Steam! ⚡</h3>
+                        <p class="news-description">
+                            BeamNG.drive сейчас доступна со скидкой! Цена снижена с $24.99 до <strong>$9.99</strong>.<br>
+                            Для Казахстана цена составляет <strong>4 999 ₸</strong>.
+                        </p>
+                        <span class="news-badge">Акция действует до 28 февраля</span>
+                    </div>
+                </div>
+                
+                <!-- Обновление -->
+                <div class="news-card">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/ss_9f991c00a70f91c792c16ac30e20a5c6cd54a2a9.1920x1080.jpg" alt="Обновление BeamNG.drive 0.33" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">5 января 2026</span>
+                        <h3 class="news-title">Выход обновления 0.33</h3>
+                        <p class="news-description">
+                            Новые автомобили: добавлены 3 новых модели с улучшенной физикой.<br>
+                            Новая карта "Highway 01" с реалистичным трафиком.<br>
+                            Улучшения производительности и исправления багов.
+                        </p>
+                        <span class="news-badge sale">Обновление доступно</span>
+                    </div>
+                </div>
+                
+                <!-- Конкурс модов -->
+                <div class="news-card">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/ss_6410f4e9ab3431e1165c0569f691665ef9422c54.1920x1080.jpg" alt="Конкурс модов" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">20 декабря 2025</span>
+                        <h3 class="news-title">Конкурс модов в Steam Workshop</h3>
+                        <p class="news-description">
+                            Примите участие в создании контента и выиграйте призы от разработчиков. Главный приз — $1000 и набор мерча.
+                        </p>
+                        <span class="news-badge sale">Дедлайн: 31 марта</span>
+                    </div>
+                </div>
+                
+                <!-- VR поддержка -->
+                <div class="news-card">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/ss_54a06de60a91f2d6c5e8633921cfdb8dda091606.1920x1080.jpg" alt="VR в BeamNG.drive" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">10 ноября 2025</span>
+                        <h3 class="news-title">Экспериментальная VR поддержка</h3>
+                        <p class="news-description">
+                            Теперь можно играть в BeamNG.drive в VR! Поддерживаются Oculus Rift, HTC Vive и Valve Index.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Распродажа в честь годовщины -->
+                <div class="news-card sale">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/ss_8bb2eb402317b700c2c423e5bf47ea5301cc47fb.1920x1080.jpg" alt="Годовщина BeamNG.drive" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">29 мая 2025</span>
+                        <h3 class="news-title">10 лет BeamNG.drive!</h3>
+                        <p class="news-description">
+                            В честь годовщины игры — огромная распродажа и бесплатные выходные. Успейте опробовать игру бесплатно!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Новый DLC -->
+                <div class="news-card">
+                    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/284160/ss_7a6c5f9e8d4b3c2a1f0e9d8c7b6a5f4e3d2c1b0a.1920x1080.jpg" alt="DLC BeamNG.drive" class="news-image">
+                    <div class="news-content">
+                        <span class="news-date">15 апреля 2025</span>
+                        <h3 class="news-title">Вышел DLC "Off-Road Pack"</h3>
+                        <p class="news-description">
+                            10 новых внедорожников, карты для бездорожья и новые режимы. DLC уже доступно в Steam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Пагинация -->
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">4</a>
+                <a href="#" class="page-link">»</a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 • BeamNG.drive является зарегистрированной торговой маркой BeamNG GmbH</p>
+            <p>Все покупки осуществляются через платформу Steam.</p>
+        </footer>
+    </div>
+</body>
+</html>
