@@ -9,26 +9,26 @@
 <url>
 	<loc>https://steam4ig.vercel.app/index.html</loc>
 	<lastmod>2026-05-27T11:33:42+02:00</lastmod>
-	<priority>1.0</priority>
+	<priority>2.0</priority>
 </url>
 <url>
 	<loc>https://steam4ig.vercel.app/prices.html</loc>
 	<lastmod>2026-04-27T11:33:42+03:00</lastmod>
-	<priority>1.0</priority>
+	<priority>3.0</priority>
 </url>
 <url>
 	<loc>https://steam4ig.vercel.app/delivery.html</loc>
 	<lastmod>2026-03-27T11:33:42+04:00</lastmod>
-	<priority>1.0</priority>
+	<priority>4.0</priority>
 </url>
 <url>
 	<loc>https://steam4ig.vercel.app/contacts.html</loc>
 	<lastmod>2026-02-27T11:33:42+05:00</lastmod>
-	<priority>1.0</priority>
+	<priority>5.0</priority>
 </url>
 <url>
 	<loc>https://steam4ig.vercel.app/news.html</loc>
 	<lastmod>2026-01-27T11:33:42+06:00</lastmod>
-	<priority>1.0</priority>
+	<priority>6.0</priority>
 </url>
 </urlset>
