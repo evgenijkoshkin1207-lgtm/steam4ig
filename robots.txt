@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://steam4ig.vercel.app/sitemap.xml
-Host: https://steam4ig.vercel.app/index.html
+Host: https://steam4ig.vercel.app
